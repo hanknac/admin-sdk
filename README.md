@@ -41,7 +41,7 @@ python script that generates a list of users that are members in the specified g
   
 # Execution
 - cd admin-sdk
-- python3 members.py --group group@abc.com
+- python3 members.py --group **group@abc**.com
 
 
 # THE END
