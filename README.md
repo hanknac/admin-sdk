@@ -1,5 +1,5 @@
 # Disclaimer
-- The code contained in this repo is not an official Google products
+- The code contained in this repo is not an official Google product
 - Statements or claims are my own and do not represent my employer(s) past or present.
 - I release this source code under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
