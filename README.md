@@ -1,3 +1,8 @@
+# Disclaimer
+- The code contained in this repo is not an official Google products
+- Statements or claims are my own and do not represent my employer(s) past or present.
+- I release this source code under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
 # Overview
 python script that generates a list of users that are members in the specified group
 
@@ -30,7 +35,7 @@ python script that generates a list of users that are members in the specified g
 4. Place the key file created in Prereq step #2 to the admin-sdk directory
 
 5. Update the config.json file using your favorite text editor (ie vim)
-  - full path of the GCP service account key file
+  - GCP service account key file
   - GSuite user account that had API access
   - Destination folderID for the report
   
@@ -38,9 +43,5 @@ python script that generates a list of users that are members in the specified g
 - cd admin-sdk
 - python3 members.py --group group@abc.com
 
-# Disclaimer
-- The code contained in this repo is not an official Google products
-- Statements or claims are my own and do not represent my employer(s) past or present.
-- I release this source code under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 # THE END
