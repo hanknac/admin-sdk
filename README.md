@@ -1,4 +1,4 @@
-# admin-sdk
+# Overview
 python script that generates a list of users that are members in the specified group
 
 # Prerequisites
@@ -41,7 +41,6 @@ python script that generates a list of users that are members in the specified g
 # Disclaimer
 - The code contained in this repo is not an official Google products
 - Statements or claims are my own and do not represent my employer(s) past or present.
-- I release this source code under Apache License, Version 2.0 .
-
+- I release this source code under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 # THE END
