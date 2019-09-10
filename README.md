@@ -4,7 +4,7 @@
 - I release this source code under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Overview
-python script that generates a list of users that are members in the specified group
+python script that generates a list of users that are members in the specified group. The list of users will then be uploaded to a specified google drive folder.
 
 # Prerequisites
 1. Enable Admin sdk API from via GCP console
