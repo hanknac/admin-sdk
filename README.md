@@ -1,7 +1,5 @@
 # Disclaimer
-- The code contained in this repo is not an official Google product
-- Statements or claims are my own and do not represent my employer(s) past or present.
-- I release this source code under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+- This code is not an official Google product. The code is in an open-source project, which is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). You can use the code as a starting point and configure it to fit your requirements. You are responsible for ensuring that the environment and applications that you build on top of Google Cloud are properly configured and secured
 
 # Overview
 python script that generates a list of users that are members in the specified group. The list of users will then be uploaded to a specified google drive folder.
