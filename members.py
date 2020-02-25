@@ -1,3 +1,14 @@
+##########################################################################################
+#  Disclaimer                                                                            #
+#                                                                                        #
+# This code is not an official Google product. The code is in an open-source project,    #
+# which is available under the Apache License, Version 2.0. You can use the code as a    #
+# starting point and configure it to fit your requirements. You are responsible for      #
+# ensuring that the environment and applications that you build on top of Google Cloud   #
+# are properly configured and secured.                                                   #
+#                                                                                        #
+##########################################################################################
+
 from __future__ import print_function
 import os.path
 from google.oauth2 import service_account
