@@ -36,10 +36,12 @@ drive_service = build('drive', 'v3', credentials=d_creds)
 user_service = build('admin', 'directory_v1', credentials=d_creds)
 
 filename = 'members-' + datetime.now().strftime("%b-%d-%Y:%H:%M:%S")+'.csv'
+errorfile = 'errors.log'
 
 members_list = []
 header = ['member of', 'full name', 'email', 'type', 'status', 'creationTime', 'lastLogin', 'suspended', 'Change Password Flag']
 members_list.append(header)
+errors_list =[]
 
 class UserAccount:
     fullName = ''
@@ -72,11 +74,11 @@ def listmembers(groupId):
                     listmembers(member['email'])
     except Exception as e:
         print('Error: ' + str(e))
-        newrow = [str(e)]
-        members_list.append(newrow)
-        with open(filename, 'w') as writeFile:
+        newrow = [datetime.now().strftime("%b-%d-%Y:%H:%M:%S") + str(e)]
+        errors_list.append(newrow)
+        with open(errorfile, 'a+') as writeFile:
             writer = csv.writer(writeFile)
-            writer.writerows(members_list)
+            writer.writerows(errors_list)
         writeFile.close()
 
 
@@ -104,17 +106,17 @@ def getUser(member):
         return UserObj
     except Exception as e:
         print('Error: ' + str(e))
-        newrow = [str(e)]
-        members_list.append(newrow)
-        with open(filename, 'w') as writeFile:
+        newrow = [datetime.now().strftime("%b-%d-%Y:%H:%M:%S") + str(e)]
+        errors_list.append(newrow)
+        with open(errorfile, 'a+') as writeFile:
             writer = csv.writer(writeFile)
-            writer.writerows(members_list)
-        writeFile.close()
+            writer.writerows(errors_list)
+        writeFile.close()        
 
 def uploadcsv():
     try:
         csv_metadata = {
-            'name' : 'Members Report',
+            'name' : 'Members Report ' + datetime.now().strftime("%b-%d-%Y:%H:%M:%S"),
             'parents' : config["drive-folderId"],
             'mimeType' : 'application/vnd.google-apps.spreadsheet'
         }
@@ -125,14 +127,17 @@ def uploadcsv():
         file = drive_service.files().create(body=csv_metadata,media_body=media,fields='id').execute()
     except Exception as e:
         print('Error: ' + str(e))
-        newrow = [str(e)]
-        members_list.append(newrow)
-        with open(filename, 'w') as writeFile:
+        newrow = [datetime.now().strftime("%b-%d-%Y:%H:%M:%S") + str(e)]
+        errors_list.append(newrow)
+        with open(errorfile, 'a+') as writeFile:
             writer = csv.writer(writeFile)
-            writer.writerows(members_list)
+            writer.writerows(errors_list)
         writeFile.close()
+    else:
+        if os.path.exists(filename):
+            os.remove(filename)
 
-
+        
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--group', required=True, help="group email address")
